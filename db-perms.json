@@ -1,0 +1,14 @@
+{
+    "$options": [
+        "all",
+        "owns"
+    ],
+    "admin": {
+        "read": "all",
+        "write": "all"
+    },
+    "user": {
+        "read": "all",
+        "write": "owns"
+    }
+}
