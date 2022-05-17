@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 const {createUser} = require('../../controllers/users/createUser.js')
 const {createSession} = require('../../controllers/users/createSession.js')
-const {createRecord} = require('../../controllers/users/createRecord.js')
+const {createRecord} = require('../../controllers/records/createRecord.js')
+const {getRecord} = require('../../controllers/records/getRecord.js')
 
 // https://expressjs.com/en/guide/routing.html
 
@@ -12,7 +13,7 @@ router.use((req: any, res: any, next: any) => {
   next()
 })
 router.get('/', (req: any, res: any) => {
-  res.send('api v1 root')
+  res.send('api up')
 })
 
 // Users
@@ -28,6 +29,11 @@ router.get('/users/login', (req: any, res: any) => {
 // Records
 
 router.post('/records', (req: any, res: any) => {
+  console.log("post record")
   createRecord(req, res)
+})
+
+router.get('/records', (req: any, res: any) => {
+  getRecord(req, res)
 })
 export = router

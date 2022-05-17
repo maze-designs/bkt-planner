@@ -1,6 +1,6 @@
 import express from 'express'
 import path from 'path'
-import { users, records, config } from './db'
+// import { users, records, config } from './db'
 import colors from 'colors/safe'
 import apiv1 from '../routes/api/v1'
 
