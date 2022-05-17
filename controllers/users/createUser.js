@@ -15,31 +15,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.createUser = void 0;
 const db_js_1 = require("../../src/db.js");
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const safe_1 = __importDefault(require("colors/safe"));
+function userExists(username) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return yield db_js_1.client.query(db_js_1.q.Exists(db_js_1.q.Match(db_js_1.q.Index('users_by_username'), username)));
+    });
+}
 function createUser(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        // console.log(req)
-        console.log(req.body.username);
-        // res.send('apiv1: createUser')
-        yield bcrypt_1.default.hash(req.body.password, 10, (err, hash) => {
-            if (!db_js_1.users.has(req.body.username)) {
-                let data = {
-                    "displayName": req.body.displayName,
-                    "password": hash,
-                    "sessions": [],
-                    "perms": "user"
-                    // TODO: add more data?
-                };
-                db_js_1.users.set(req.body.username, data);
-                db_js_1.users.set();
-                res.send('user created');
-            }
-            else {
-                console.log(safe_1.default.red(`[FAILED] user ${req.body.username} already exists`));
-                res.send('user already exists');
-                // TODO: throw error
-            }
-        });
+        if (!(yield userExists(req.body.username))) {
+            let hash = yield bcrypt_1.default.hash(req.body.password, 10);
+            let data = {
+                username: req.body.username,
+                "displayName": req.body.displayName,
+                "password": hash,
+                "perms": "user"
+            };
+            db_js_1.client.query(db_js_1.q.Create(db_js_1.q.Collection("users"), {
+                data: data
+            }));
+            res.status(200).send("user created");
+            // TODO: check if passed
+        }
+        else {
+            res.status(401).send("User already exists");
+        }
     });
 }
 exports.createUser = createUser;

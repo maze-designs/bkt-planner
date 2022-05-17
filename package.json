@@ -11,7 +11,9 @@
     "bcrypt": "^5.0.1",
     "colors": "^1.4.0",
     "datejs": "^1.0.0-rc3",
+    "dotenv": "^16.0.1",
     "express": "^4.18.0",
+    "faunadb": "^4.5.4",
     "redis-fast-driver": "^2.2.1",
     "simple-json-db": "^2.0.0",
     "typescript": "^4.6.3"

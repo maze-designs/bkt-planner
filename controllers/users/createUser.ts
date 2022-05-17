@@ -1,32 +1,32 @@
-import { users } from '../../src/db.js';
+import { q, client } from '../../src/db.js';
 import bcrypt from 'bcrypt';
-import colors from 'colors/safe';
 
 
+async function userExists(username: string) {
+    return await client.query(q.Exists(q.Match(q.Index('users_by_username'), username)))
+}
 
 export async function createUser(req: any, res: any) {
+    if(!await userExists(req.body.username)) {
+    let hash:string = await bcrypt.hash(req.body.password, 10)
+    let data = {
+        username: req.body.username,
+        "displayName": req.body.displayName,
+        "password": hash,
+        "perms": "user"
+    }
 
-    // console.log(req)
-    console.log(req.body.username)
-    // res.send('apiv1: createUser')
-     await bcrypt.hash(req.body.password, 10, (err: any, hash: String) => {
-         if (!users.has(req.body.username)) {
-             let data = {
-                 "displayName": req.body.displayName,
-                 "password": hash,
-                 "sessions": [], // TODO: session
-                 "perms": "user"
-                 // TODO: add more data?
-             }
-             users.set(req.body.username, data)
-             users.set()
-             res.send('user created')
-         }
-         else {
-             console.log(colors.red(`[FAILED] user ${req.body.username} already exists`))
-             res.send('user already exists')
-             // TODO: throw error
-         }
-     })
+    client.query(q.Create(
+        q.Collection("users"),
+        {
+          data: data
+        }
+      ))
+      res.status(200).send("user created")
+      // TODO: check if passed
+    }
+    else {
+        res.status(401).send("User already exists")
+    }
 }
 
