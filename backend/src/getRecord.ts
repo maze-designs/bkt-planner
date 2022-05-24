@@ -4,7 +4,6 @@ import colors from 'colors/safe';
 
 
 export async function getRecord(req: any, res: any) {
-
     console.log(req.body.username)
     sessions.has(req.body.session) ?
     function () {

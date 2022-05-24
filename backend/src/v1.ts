@@ -17,6 +17,11 @@ router.get('/', (req: any, res: any) => {
   res.send('api up')
 })
 
+router.get('/testing', (req: any, res: any) => {
+  console.log(`testing: ${req.headers.sessionid}`)
+  res.send(req.headers)
+})
+
 // Users
 
 router.post('/users', (req: any, res: any) => {

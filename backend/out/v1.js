@@ -15,6 +15,10 @@ router.use((req, res, next) => {
 router.get('/', (req, res) => {
     res.send('api up');
 });
+router.get('/testing', (req, res) => {
+    console.log(`testing: ${req.headers.sessionid}`);
+    res.send(req.headers);
+});
 // Users
 router.post('/users', (req, res) => {
     createUser(req, res);

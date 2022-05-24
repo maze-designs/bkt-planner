@@ -4,3 +4,4 @@ out
 frontend/*.html
 db-*
 *.map
+.VSCodeCounter
