@@ -4,6 +4,7 @@ const {createUser} = require('./createUser')
 const {createSession} = require('./createSession')
 const {createRecord} = require('./createRecord')
 const {getRecord} = require('./getRecord')
+const {validateSession} = require('./dbfuncs')
 
 // https://expressjs.com/en/guide/routing.html
 
@@ -24,6 +25,11 @@ router.post('/users', (req: any, res: any) => {
 
 router.post('/users/login', (req: any, res: any) => {
   createSession(req, res)
+})
+
+router.get('/users/checkSession', (req: any, res: any) => {
+    res.send({'valid': true})
+  //TODO:
 })
 
 // Records

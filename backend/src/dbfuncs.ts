@@ -30,6 +30,7 @@ export async function removeSession(sessionId: string) {
 }
 
 export async function renewSession(sessionId: string) {
+    //TODO:
 }
 export async function getUserRefFromSession(session: string) {
 

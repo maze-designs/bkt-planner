@@ -17,6 +17,7 @@ async function removeSession(sessionId) {
 }
 exports.removeSession = removeSession;
 async function renewSession(sessionId) {
+    //TODO:
 }
 exports.renewSession = renewSession;
 async function getUserRefFromSession(session) {

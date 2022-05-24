@@ -1,3 +1,6 @@
 node_modules
 .env
+out
+frontend/*.html
 db-*
+*.map

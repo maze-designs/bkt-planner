@@ -1,9 +1,7 @@
-import { parseJsonText } from "typescript";
 import { q, client } from "./db";
 import bcrypt from 'bcrypt';
-import { random } from "colors/safe";
 import { randomBytes } from "crypto";
-import { getUserRefFromUsername, validateSession, removeSession } from "./dbfuncs";
+import { getUserRefFromUsername, validateSession } from "./dbfuncs";
 
 // async function sessionIdExists(session: string) {
 //     return await client.query(q.Exists(q.Match(q.Index('sessions_by_id'), session)))
