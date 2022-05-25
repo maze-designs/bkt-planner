@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "**/node_modules": true,
+        "**/.env": true,
+        "**/out": true,
+        "**/db-*": true,
+        "**/*.map": true,
+        "**/.VSCodeCounter": true
+    }
+}

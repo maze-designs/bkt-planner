@@ -1,3 +1,7 @@
+:root {
+  --pattern-size: 30px 30px;
+}
+
 html,
 body {
   width: 100%;
@@ -13,7 +17,7 @@ body {
 
 
 #ribbon {
-  width: 20vw;
+  width: 10rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -67,7 +71,8 @@ body {
 
 
 #calendar {
-  width: 80vw;
+  /* width: calc(100vw - 20rem); TODO: adjust for minimized ribbon */
+  width: 100vw;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -78,7 +83,7 @@ body {
 .weekly .day {
   margin: 0.5rem;
   min-width: 8rem;
-  max-width: auto;
+  flex-grow: 1;
   height: calc(100% - 1.5rem);
   border-radius: 1rem;
   display: flex;
@@ -111,10 +116,25 @@ body {
   width: 100%;
   height: 100%;
   background-image: repeating-linear-gradient(0deg, #C8CCD7, #C8CCD7 1px, transparent 0px, transparent);
-  background-size: 30px 30px; /* TODO: set dynamically */
+  background-size: var(--pattern-size); /* TODO: set dynamically */
+  position: relative;
 }
 
-
+.weekly .day .timeline .calendar-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  width: 100%;
+  background-color: rgba(255, 115, 115, 0.535);
+  border: 1px solid #C8CCD7;
+  /* left: 50%;
+  transform: translateX(-50%); */
+}
+.weekly .day .timeline .calendar-item * {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 
 .hr-100pc {
   width: 100%;

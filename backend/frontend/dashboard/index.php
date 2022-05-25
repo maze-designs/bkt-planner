@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <link rel="stylesheet" href="./style.css">
-<script src="./index.js"></script>
+<script src="./index.js" defer></script>
 </head>
 <body>
     <div id="ribbon">
@@ -40,12 +40,54 @@
             <div class="hr-100pc"></div>
             <div class="timeline"></div>
         </div>
-        <div class="day" id="day2"></div>
-        <div class="day" id="day3"></div>
-        <div class="day" id="day4"></div>
-        <div class="day" id="day5"></div>
-        <div class="day" id="day6"></div>
-        <div class="day" id="day7"></div>
+        <div class="day" id="day2">
+            <div class="day-header">
+                <span class="day-name">Tuesday</span>
+                <span class="day-date">05/24</span>
+            </div>
+            <div class="hr-100pc"></div>
+            <div class="timeline"></div>
+        </div>
+        <div class="day" id="day3">
+            <div class="day-header">
+                <span class="day-name">Wednesday</span>
+                <span class="day-date">05/25</span>
+            </div>
+            <div class="hr-100pc"></div>
+            <div class="timeline"></div>
+        </div>
+        <div class="day" id="day4">
+            <div class="day-header">
+                <span class="day-name">Thursday</span>
+                <span class="day-date">05/26</span>
+            </div>
+            <div class="hr-100pc"></div>
+            <div class="timeline"></div>
+        </div>
+        <div class="day" id="day5">
+            <div class="day-header">
+                <span class="day-name">Friday</span>
+                <span class="day-date">05/27</span>
+            </div>
+            <div class="hr-100pc"></div>
+            <div class="timeline"></div>
+        </div>
+        <div class="day" id="day6">
+            <div class="day-header">
+                <span class="day-name">Saturday</span>
+                <span class="day-date">05/28</span>
+            </div>
+            <div class="hr-100pc"></div>
+            <div class="timeline"></div>
+        </div>
+        <div class="day" id="day7">
+            <div class="day-header">
+                <span class="day-name">Sunday</span>
+                <span class="day-date">05/29</span>
+            </div>
+            <div class="hr-100pc"></div>
+            <div class="timeline"></div>
+        </div>
     </div>
 </body>
 </html>
