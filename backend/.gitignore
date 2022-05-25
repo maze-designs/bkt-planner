@@ -4,3 +4,5 @@ out
 db-*
 *.map
 .VSCodeCounter
+cypress/integration/1*
+cypress/integration/2*
