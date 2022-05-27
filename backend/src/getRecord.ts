@@ -29,6 +29,30 @@ export async function getRecord(req: any, res: any) {
               "name": "Test Record 2",
               "description": "asdLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             }
+          },
+          {
+            "ref": "332574945713324233",
+            "ts": 16534270340200044,
+            "data": {
+              "user": "testuser",
+              "addedDate": "1653426898090",
+              "startDate": "1653381000",
+              "endDate": "1653388200",
+              "name": "Test Record 3",
+              "description": "asdLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            }
+          },
+          {
+            "ref": "332574945713324233",
+            "ts": 16534270340200044,
+            "data": {
+              "user": "testuser",
+              "addedDate": "1653426898090",
+              "startDate": "1653388200",
+              "endDate": "1653414900",
+              "name": "Test Record 4",
+              "description": "asdLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            }
           }]
     );
 }
