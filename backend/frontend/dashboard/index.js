@@ -1,4 +1,5 @@
 const apiUrl = 'http://localhost:6969/api/v1';
+let mode = "weekly"
 
 const q = document.querySelector.bind(document)
 const dq = (selector1, selector2) => { // dual queryselector
@@ -41,13 +42,23 @@ const drawCalendar = async () => {
     const dayStart = 8
     const dayEnd = 20
 
+    switch(mode) {
+        case "weekly":
+
+            break
+        case "monthly":
+            break
+        default:
+            break
+    }
+
     const dayLength = dayEnd - dayStart
-    const hourWidthPx = (q(".timeline").clientHeight / dayLength)
+    const hourHeightPx = (q(".timeline").clientHeight / dayLength)
 
     console.log(records)
     today = new Date()
 
-    document.documentElement.style.setProperty('--pattern-size', `${hourWidthPx}px ${hourWidthPx}px`)
+    document.documentElement.style.setProperty('--pattern-size', `${hourHeightPx}px ${hourHeightPx}px`)
     records.forEach(record => {
         const startDate = new Date(record.data.startDate * 1000) //TODO: check if milis
         const endDate = new Date(record.data.endDate * 1000)
@@ -58,8 +69,8 @@ const drawCalendar = async () => {
         const endHour = endDate.getHours()
         const endMinutePercent = endDate.getMinutes() / 60
         console.log(startHour, startMinutePercent, endHour, endMinutePercent)
-        const top = (startHour + startMinutePercent - dayStart) * hourWidthPx
-        const height = ((endHour + endMinutePercent) - (startHour + startMinutePercent)) * hourWidthPx
+        const top = (startHour + startMinutePercent - dayStart) * hourHeightPx
+        const height = ((endHour + endMinutePercent) - (startHour + startMinutePercent)) * hourHeightPx
 
         let el = document.createElement('div')
         el.className = 'calendar-item'

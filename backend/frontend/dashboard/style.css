@@ -82,7 +82,7 @@ body {
 
 .weekly .day {
   margin: 0.5rem;
-  min-width: 8rem;
+  min-width: 18rem;
   flex-grow: 1;
   height: calc(100% - 1.5rem);
   border-radius: 1rem;
