@@ -7,24 +7,22 @@
 
 const username = 'testuser'
 const password = 'testing'
-const waitTime = 3000
+// const waitTime = 3000
 const url = 'http://localhost:6969'
 
 
 it('opens login page', () => {
 cy.visit(url)
 cy.get('a[href]').contains('Login').click()
+cy.url().should('include', '/login.html')
 })
-it('fills in creds', () => {
+it('login', () => {
+    cy.visit(`${url}/login.html`)
 cy.get('input[id=username]').type(username)
 cy.get('input[id=password]').type(password)
-})
-it('logs in', () => {
-    cy.get('button[id=login]').click()
-})
-it('checks if logged in', () => {
-    cy.wait(waitTime)
-    cy.get('span[id=username]').contains(username)
+cy.get('button[id=login]').click()
+// cy.wait(waitTime)
+cy.get('span[id=username]').contains(username)
 })
 it('logs out', () => {
     cy.get('a[href]').contains('Logout').click()
